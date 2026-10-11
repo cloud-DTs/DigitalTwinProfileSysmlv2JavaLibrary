@@ -7,32 +7,15 @@ Maps SysML v2 models written against the `DigitalTwinLibrary` to Java objects. I
 
 * Java 21 (a newer runtime works as well)
 * Maven
-* Access to GitHub Packages for SysmlModelParser
 
 # Maven
 
-Configure GitHub Packages in `~/.m2/settings.xml` with a token that has `read:packages`:
-
+Add the repository:
 ```xml
-<server>
-    <id>github</id>
-    <username>GITHUB_USERNAME</username>
-    <password>GITHUB_TOKEN</password>
-</server>
-```
-
-Add the repository and the dependency:
-
-```xml
-<repository>
-    <id>github</id>
-    <url>https://maven.pkg.github.com/mcotrotzo/DigitalTwinProfileSysmlv2JavaLibrary</url>
-</repository>
-
-<dependency>
-    <groupId>org.example</groupId>
-    <artifactId>sysml-digital-twin-profile</artifactId>
-    <version>GITHUB-release version</version>
+  <dependency>
+    <groupId>com.github.cloud-DTs</groupId>
+    <artifactId>DigitalTwinProfileSysmlv2JavaLibrary</artifactId>
+    <version>RELEASE_TAG</version>
 </dependency>
 ```
 
