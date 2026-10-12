@@ -12,7 +12,6 @@ public class PackageLevelUsageRule extends GenerelRules {
 	@Override
 	public boolean isValid() throws IllegalArgumentException {
 		for (Usage usage : utilsManager.collect(Usage.class)) {
-			System.out.println("Checking usage: " + usage.getName() + " in owner: " + usage.getOwner().getName());
 			if (org.omg.sysml.lang.sysml.Package.class.isInstance(usage.getOwner())) {
 				throw new IllegalArgumentException("'%s' is a usage directly in package '%s'; only definitions are allowed there"
 						.formatted(usage.getName(), usage.getOwner().getName()));
