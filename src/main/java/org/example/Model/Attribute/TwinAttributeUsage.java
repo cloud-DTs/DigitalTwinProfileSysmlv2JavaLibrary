@@ -29,7 +29,6 @@ public class TwinAttributeUsage<C extends TwinAttributeCore, D extends TwinAttri
 		mapExpression();
 	}
 
-	// an attribute only takes a literal value; the reference attributes override this
 	protected void mapExpression() {
 		expression = instance.mapOwnedElement(Expression.class, this, LITERAL).stream().findFirst().<ExpressionUsage<?>>map(literal -> literal);
 	}
