@@ -31,7 +31,7 @@
 
     <repositories>
         <repository>
-            <id>github-sysml-parser</id>
+            <id>cloud-dts</id>
             <name>GitHub Packages</name>
             <url>https://maven.pkg.github.com/cloud-DTs/Sysmlv2ModelParser</url>
         </repository>
@@ -39,7 +39,7 @@
 
     <distributionManagement>
         <repository>
-            <id>github-dt-profile</id>
+            <id>cloud-dts</id>
             <name>GitHub Packages</name>
             <url>https://maven.pkg.github.com/cloud-DTs/DigitalTwinProfileSysmlv2JavaLibrary</url>
         </repository>

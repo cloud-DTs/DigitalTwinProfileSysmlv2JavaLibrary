@@ -19,7 +19,7 @@ jobs:
         with:
           distribution: temurin
           java-version: '21'
-          server-id: github
+          server-id: cloud-dts
           server-username: GITHUB_ACTOR
           server-password: GITHUB_TOKEN
 

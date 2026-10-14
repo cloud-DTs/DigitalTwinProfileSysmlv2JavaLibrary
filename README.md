@@ -17,11 +17,11 @@ Add both repositories (this library and SysmlModelParser, which it depends on) a
 ```xml
 <repositories>
     <repository>
-        <id>github-dt-profile</id>
+        <id>cloud-dts</id>
         <url>https://maven.pkg.github.com/cloud-DTs/DigitalTwinProfileSysmlv2JavaLibrary</url>
     </repository>
     <repository>
-        <id>github-sysml-parser</id>
+        <id>cloud-dts</id>
         <url>https://maven.pkg.github.com/cloud-DTs/Sysmlv2ModelParser</url>
     </repository>
 </repositories>
