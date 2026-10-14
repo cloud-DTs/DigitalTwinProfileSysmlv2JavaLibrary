@@ -39,12 +39,7 @@ Add your token to `~/.m2/settings.xml`, once for each repository `id`:
 <settings>
     <servers>
         <server>
-            <id>github-dt-profile</id>
-            <username>YOUR_GITHUB_USER</username>
-            <password>YOUR_TOKEN</password>
-        </server>
-        <server>
-            <id>github-sysml-parser</id>
+            <id>cloud-dts</id>
             <username>YOUR_GITHUB_USER</username>
             <password>YOUR_TOKEN</password>
         </server>
