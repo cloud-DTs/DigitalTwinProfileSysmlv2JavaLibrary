@@ -10,25 +10,49 @@ Maps SysML v2 models written against the `DigitalTwinLibrary` to Java objects. I
 
 # Maven
 
-Add the JitPack repository:
+The library is published to GitHub Packages. You need access to the `cloud-DTs` organization and a GitHub personal access token with the `read:packages` scope.
+
+Add both repositories (this library and SysmlModelParser, which it depends on) and the dependency:
+
 ```xml
 <repositories>
     <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
+        <id>github-dt-profile</id>
+        <url>https://maven.pkg.github.com/cloud-DTs/DigitalTwinProfileSysmlv2JavaLibrary</url>
+    </repository>
+    <repository>
+        <id>github-sysml-parser</id>
+        <url>https://maven.pkg.github.com/cloud-DTs/Sysmlv2ModelParser</url>
     </repository>
 </repositories>
-```
-```xml
-  <dependency>
-    <groupId>com.github.cloud-DTs</groupId>
-    <artifactId>DigitalTwinProfileSysmlv2JavaLibrary</artifactId>
-    <version>RELEASE_TAG</version>
+
+<dependency>
+    <groupId>org.example</groupId>
+    <artifactId>sysml-digital-twin-profile</artifactId>
+    <version>VERSION</version>
 </dependency>
 ```
 
-The library zip (`DTLibrary.zip`) is packed from `DTLibrary/` during the build and shipped inside the jar.
+Add your token to `~/.m2/settings.xml`, once for each repository `id`:
 
+```xml
+<settings>
+    <servers>
+        <server>
+            <id>github-dt-profile</id>
+            <username>YOUR_GITHUB_USER</username>
+            <password>YOUR_TOKEN</password>
+        </server>
+        <server>
+            <id>github-sysml-parser</id>
+            <username>YOUR_GITHUB_USER</username>
+            <password>YOUR_TOKEN</password>
+        </server>
+    </servers>
+</settings>
+```
+
+`VERSION` is a published version of this library.
 # Usage
 
 ```java
