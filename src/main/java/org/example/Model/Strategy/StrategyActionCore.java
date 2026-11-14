@@ -62,14 +62,15 @@ public class StrategyActionCore extends DTCore {
 		pathToCode.getExpression().filter(TwinLiteralStringUsage.class::isInstance).map(TwinLiteralStringUsage.class::cast)
 				.map(TwinLiteralStringUsage::getValue)
 				.filter(path -> !exists(path))
-				.ifPresent(path -> System.out.println("Warning: The path to code '" + path + "' does not exist for " + this.sysmlElement.path() + " or is no zip file. Please check the path."));
+				.ifPresent(path -> System.out.println("Warning: The path to code '" + path + "' does not exist for "
+						+ this.sysmlElement.path() + " or is neither a folder nor a zip file. Please check the path."));
 	}
+
 	private boolean exists(String path) {
 		try {
-
-			var file = Path.of(path);
-			return Files.exists(file) && file.getFileName().toString().endsWith(".zip");
-
+			Path file = Path.of(path);
+			return Files.isDirectory(file)
+					|| (Files.isRegularFile(file) && file.getFileName().toString().endsWith(".zip"));
 		} catch (InvalidPathException e) {
 			return false;
 		}
